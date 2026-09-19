@@ -1,0 +1,5 @@
+import { ResumeData, ResumeItem } from '@/lib/resume-types';
+export type TemplateProps = { data: ResumeData; compact?: boolean };
+export function Section({ title, children }: { title: string; children: React.ReactNode }) { return <section className="resume-section"><h2>{title}</h2>{children}</section>; }
+export function Items({ items }: { items: ResumeItem[] }) { return <div className="resume-items">{items.map(item => <article key={item.id}><div className="resume-item-heading"><strong>{item.title}</strong>{item.date && <span>{item.date}</span>}</div>{item.detail && <p>{item.detail}</p>}</article>)}</div>; }
+export function Header({ data }: { data: ResumeData }) { return <header className="resume-header"><div><h1>{data.fullName || 'Your Name'}</h1><p className="resume-role">{data.jobTitle || 'Professional title'}</p><p className="resume-contact">{[data.email, data.phone, data.location].filter(Boolean).join(' · ')}</p><p className="resume-links">{[data.linkedin, data.github, data.portfolio].filter(Boolean).join(' · ')}</p></div>{data.profilePhoto && <img className="resume-photo" src={data.profilePhoto} alt="Profile" />}</header>; }

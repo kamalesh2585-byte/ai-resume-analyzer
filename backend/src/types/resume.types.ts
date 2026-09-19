@@ -1,0 +1,3 @@
+export type ContactInfo = { email: string; phone: string; location: string; linkedin: string; github: string; website: string };
+export type ParsedResume = { contact: ContactInfo; summary: string; skills: string[]; experience: string[]; education: string[]; projects: string[]; certifications: string[]; achievements: string[]; languages: string[]; interests: string[]; publications: string[]; links: string[] };
+export type ResumeData = { fullName?: string; jobTitle?: string; email?: string; phone?: string; location?: string; summary?: string; skills?: string[]; experience?: Array<Record<string, string>>; education?: Array<Record<string, string>>; projects?: Array<Record<string, string>> };

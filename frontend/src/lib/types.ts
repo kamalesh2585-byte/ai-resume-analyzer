@@ -1,0 +1,2 @@
+export type Remark = { message: string; severity: 'low' | 'medium' | 'high'; category: string };
+export type ResumeAnalysis = { success: true; scores: { overall: number; ats: number; content: number; skills: number; experience: number; education: number; formatting: number; keywordMatch: number | null }; breakdown: Record<string, number>; remarks: { strengths: Remark[]; improvements: Remark[]; watchOuts: Remark[] }; keywords: { matched: string[]; missing: string[]; percentage: number | null }; parsedResume: Record<string, unknown> };

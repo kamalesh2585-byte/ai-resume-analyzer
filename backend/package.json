@@ -1,0 +1,7 @@
+{
+  "name": "byteforce-api",
+  "private": true,
+  "scripts": {"dev": "tsx watch src/server.ts", "start:dev": "tsx watch src/server.ts", "build": "tsc", "start": "node dist/server.js", "test": "tsx --test test/scoring.test.ts"},
+  "dependencies": {"adm-zip": "^0.5.16", "cors": "^2.8.5", "dotenv": "^16.4.7", "express": "^4.21.2", "mammoth": "^1.9.0", "multer": "^2.0.0", "pdf-parse": "^1.1.1", "tesseract.js": "^6.0.1", "word-extractor": "^0.1.0"},
+  "devDependencies": {"@types/adm-zip": "^0.5.5", "@types/cors": "^2.8.17", "@types/express": "^5.0.0", "@types/multer": "^2.0.0", "@types/node": "^22.10.5", "@types/pdf-parse": "^1.1.5", "tsx": "^4.19.2", "typescript": "^5.7.2"}
+}

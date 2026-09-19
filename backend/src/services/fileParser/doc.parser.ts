@@ -1,0 +1,3 @@
+import WordExtractor from 'word-extractor'; import { mkdtemp, rm, writeFile } from 'node:fs/promises'; import os from 'node:os'; import path from 'node:path';
+import { cleanResumeText } from './cleanResumeText'; import { ExtractedResumeText } from './types';
+export async function parseDoc(buffer: Buffer): Promise<ExtractedResumeText> { const directory = await mkdtemp(path.join(os.tmpdir(), 'byteforce-doc-')); const filePath = path.join(directory, 'resume.doc'); try { await writeFile(filePath, buffer); const document = await new WordExtractor().extract(filePath); return { text: cleanResumeText(document.getBody()), fileType: 'doc', pageCount: 1 }; } finally { await rm(directory, { recursive: true, force: true }); } }

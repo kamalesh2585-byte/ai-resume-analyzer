@@ -1,0 +1,8 @@
+import { ResumeAnalysis } from './types';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+async function request(input: RequestInfo | URL, init?: RequestInit) { try { return await fetch(input, init); } catch { throw new Error('The analysis server is not reachable. Start the backend API on port 5000 and try again.'); } }
+async function readResponse<T>(response: Response): Promise<T> { const payload = await response.json().catch(() => ({})); if (!response.ok) throw new Error(payload.message || 'The server could not process this request.'); return payload as T; }
+export async function uploadResume(file: File): Promise<{ success: true; text: string; fileName: string; fileType: string; pageCount: number }> { const body = new FormData(); body.append('resume', file); return readResponse(await request(`${API_URL}/resume/upload`, { method: 'POST', body })); }
+export async function analyzeResume(resumeText: string, jobDescription = ''): Promise<ResumeAnalysis> { return readResponse(await request(`${API_URL}/resume/analyze`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ resumeText, jobDescription }) })); }
+export async function generateResume(templateId: string, resumeData: unknown): Promise<{ success: true; resume: Record<string, unknown> }> { return readResponse(await request(`${API_URL}/resume/generate`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ templateId, resumeData }) })); }
+export async function getTemplates() { return readResponse(await request(`${API_URL}/templates`)); }

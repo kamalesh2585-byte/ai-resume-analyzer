@@ -1,0 +1,1 @@
+export function ScoreCircle({ value, size = 'large' }: { value: number; size?: 'large' | 'small' }) { return <div className={`score-circle ${size}`} style={{ '--score': `${value * 3.6}deg` } as React.CSSProperties}><div><strong>{value}%</strong><span>overall score</span></div></div>; }
