@@ -1,4 +1,4 @@
-import { TemplateProps, Header, Items, Section } from './template-types';
+import { TemplateProps, Header, Items, Section, CertificateAttachments } from './template-types';
 
 export function AtsTemplate({ data }: TemplateProps) {
   return <div className="resume-document template-ats">
@@ -11,5 +11,6 @@ export function AtsTemplate({ data }: TemplateProps) {
     {data.certifications.length > 0 && <Section title="Certifications"><Items items={data.certifications} /></Section>}
     {data.achievements.length > 0 && <Section title="Achievements"><Items items={data.achievements} /></Section>}
     {data.languages.length > 0 && <Section title="Languages"><Items items={data.languages} /></Section>}
+    <CertificateAttachments data={data} />
   </div>;
 }

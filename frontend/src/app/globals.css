@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+.resume-attachments{display:grid;gap:8px}.resume-attachment{display:grid;gap:5px;color:#625b54;text-decoration:none}.resume-attachment strong{font-size:10px}.resume-attachment img{width:100%;max-height:110px;object-fit:contain;object-position:left center;border:1px solid #ddd3c8;border-radius:4px;background:#f2eee8}.preview-page .actions{display:flex;gap:10px;align-items:center}@media print{body{background:#fff!important}.nav,.preview-page>.section-head{display:none!important}.page{padding:0!important;max-width:none!important}.final-preview{max-width:none!important}.final-preview .resume-document{box-shadow:none!important;margin:0!important}}
 @media(max-width:900px){.builder-preview.final-preview{width:100%;height:800px;overflow:hidden;padding:0}.final-preview .resume-document{transform:scale(.68);transform-origin:top left;margin:0}}
 @media(max-width:480px){.builder-preview.final-preview{height:480px;overflow:hidden}.final-preview .resume-document{transform:scale(.41)}}
  .resume-document,.resume-document *{overflow-wrap:anywhere;word-break:break-word}.resume-document .resume-header>div,.resume-document .resume-item-heading strong{min-width:0}.resume-document .resume-contact,.resume-document .resume-links{white-space:normal}
@@ -29,3 +30,16 @@ html,body,.nav,.panel,.step,.template-card,.stat-card,.glass,.upload-box,.button
 @media(max-width:900px){.builder-workspace,.builder-editor,.builder-live,.builder-preview{width:100%;min-width:0}.builder-live .builder-preview{max-width:100%}}
 @media(max-width:900px){.builder-live .builder-preview .resume-document{flex:none}}
 @media(max-width:800px){.template-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:480px){.template-grid{grid-template-columns:minmax(0,1fr)}}
+
+.image-generator{margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}
+.image-generator-heading{display:flex;align-items:flex-start;gap:12px;margin-bottom:18px}
+.image-generator-icon{display:grid;place-items:center;width:34px;height:34px;flex:none;border-radius:9px;background:rgba(255,116,69,.14);color:var(--orange)}
+.image-generator-heading h3{margin:1px 0 4px;font:600 17px 'Space Grotesk'}
+.image-generator-heading p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+.image-generator-actions{display:flex;align-items:center;gap:12px;margin-top:13px}.image-generator-actions .button{padding:10px 13px;font-size:12px}.image-generator-actions span{color:var(--muted);font-size:11px}
+.generated-image-result{display:flex;align-items:flex-end;gap:14px;margin-top:18px}.generated-image-result>.button{padding:10px 13px;font-size:12px}
+.generated-image-frame{position:relative;width:150px;aspect-ratio:1;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#171514;display:grid;place-items:center}
+.generated-image-frame span{position:absolute;padding:12px;color:var(--muted);font-size:11px;text-align:center}.generated-image-frame img{position:relative;width:100%;height:100%;object-fit:cover;visibility:hidden}.generated-image-frame img.ready{visibility:visible}
+[data-theme="premium"] .image-generator-icon{background:#16321f;color:#b8ff68}
+@media(max-width:480px){.generated-image-result{align-items:stretch;flex-direction:column}.generated-image-frame{width:100%;max-width:220px}}
+
